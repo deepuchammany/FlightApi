@@ -4,7 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<NoWarn>CS8765;CS8618;CS8603;CS8604;CS1587</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
