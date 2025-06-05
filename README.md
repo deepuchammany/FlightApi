@@ -8,16 +8,18 @@ A RESTful API built with **ASP.NET Core 8** for managing flight information. It 
 
 ```
 FlightApi/
-├── Controllers/            # API Controllers
-├── Data/                   # EF Core DbContext & CSV Seeder
-├── Models/                 # Domain models and enums
-├── Repositories/           # Data access layer
-├── Services/               # Business logic layer
-├── Program.cs              # App entrypoint
-├── FlightInformation.csv   # Flight seed data (CSV)
+├── Controllers/              # API Controllers
+├── Data/                     # EF Core DbContext
+├── Models/                   # Domain models and enums
+├── Repositories/             # Data access layer
+├── Services/                 # Business logic layer
+├── Seed/                     # Seeder class (FlightSeeder.cs)
+├── SeedData/                 # CSV file (FlightInformation.csv)
+├── Validation/               # Custom validation (DateGreaterThanAttribute.cs)
+├── Program.cs                # App entrypoint
 ├── FlightApi.csproj
 |
-FlightApi.Tests/            # Unit test project (xUnit)
+FlightApi.Tests/              # Unit test project (xUnit)
 └── FlightApi.Tests.csproj
 ```
 
@@ -59,11 +61,11 @@ Navigate to: [https://localhost:5001/swagger](https://localhost:5001/swagger)
 
 ## 📦 CSV Import for Initial Seeding
 
-The file `FlightInformation.csv` in the **FlightApi** project root is automatically imported at startup if the database is empty.
+The file `FlightInformation.csv` in the **FlightApi** project **SeedData** folder is automatically imported at startup if the database is empty.
 
 ### 🔄 How to Update It
 
-1. Replace or edit the `FlightInformation.csv` file in the root of the `FlightApi` project.
+1. Replace or edit the `FlightInformation.csv` file in the `SeedData` folder of the `FlightApi` project.
 2. In Visual Studio:
    - Right-click `FlightInformation.csv` → **Properties**
    - Ensure **Copy to Output Directory** is set to `Copy if newer`
